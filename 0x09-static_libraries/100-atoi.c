@@ -16,17 +16,19 @@ int _atoi(char *s)
 		if (*(s + count) == '-')
 			pn *= -1;
 
-		if (s > 0 && (*(s + count) < '0' || *(s + count) > '9'))			if ((*(s + count) >= '0') && (*(s + count) <= '9')
-		if (size > 0)			if (size > 0)
-		m *= 10;
-		size++;
-                 }
-		count++;
-		}
-
-		for (i = count - size; i < count; i++)
+		if ((*(s + count) >= '0') && (*(s + count) <= '9'))
 		{
-			 	oi = oi + ((*(s + i) - 48) * m);
-				return (oi * pn);
-				}
+			if (size > 0)
+				m *= 10;
+			size++;
+		}
+		count++;
 	}
+
+	for (i = count - size; i < count; i++)
+	{
+		oi = oi + ((*(s + i) - 48) * m);
+		m /= 10;
+	}
+	return (oi * pn);
+}
