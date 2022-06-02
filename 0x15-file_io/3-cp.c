@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
  * error_file - checks if files can be opened.
  * @file_from: file_from.
@@ -23,10 +22,10 @@ void error_file(int file_from, int file_to, char *argv[])
 }
 
 /**
- * main - check the code for Holberton School students.
- * @argc: number of arguments.
- * @argv: arguments vector.
- * Return: Always 0.
+ *  main - check the code for Holberton School students.
+ *  @argc: number of arguments.
+ *  @argv: arguments vector.
+ *  Return: Always 0.
  */
 int main(int argc, char *argv[])
 {
@@ -55,7 +54,7 @@ int main(int argc, char *argv[])
 			error_file(0, -1, argv);
 	}
 
-	error_file(0, -1, argv);
+	err_close = close(file_from);
 	if (err_close == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
